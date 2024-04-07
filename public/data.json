@@ -1,0 +1,102 @@
+[
+    {
+      "id": 1,
+      "estate_title": "Seaside Resort Villa",
+      "image": "https://i.ibb.co/yFpSnhW/tidy-room-with-big-mirror.jpg",
+      "segment_name": "Luxury Seaside",
+      "description": "Indulge in luxury at our seaside villa. Enjoy panoramic ocean views, private beach access, and exclusive amenities.",
+      "price": "$600",
+      "status": "booked",
+      "location": "Tropical Paradise",
+      "facilities": ["Private pool", "Gourmet kitchen", "Beachfront terrace"]
+    },
+    {
+      "id": 2,
+      "estate_title": "Urban Boutique Hotel",
+      "image": "https://i.ibb.co/3YVDvmT/bangkok-thailand-august-12-2016-beautiful-luxury-bedroom-int.jpg",
+      "segment_name": "Boutique",
+      "description": "Experience urban chic at our boutique hotel. Stylish rooms, trendy ambiance, and personalized service await you.",
+      "price": "$150",
+      "status": "booked",
+      "location": "Downtown District",
+      "facilities": ["Rooftop bar", "Fitness center", "Meeting rooms"]
+    },
+    {
+      "id": 3,
+      "estate_title": "Mountain Lodge Retreat",
+      "image": "https://i.ibb.co/pJFGtQ3/interior-modern-comfortable-hotel-room.jpg",
+      "segment_name": "Nature Retreat",
+      "description": "Escape to the mountains at our cozy lodge retreat. Enjoy nature, hiking trails, and serene surroundings.",
+      "price": "$250",
+      "status": "booking now",
+      "location": "Serenity Peaks",
+      "facilities": ["Fireplace lounge", "Hiking trails", "Outdoor seating area"]
+    },
+    {
+      "id": 4,
+      "estate_title": "Historic City Hotel",
+      "image": "https://i.ibb.co/3YVDvmT/bangkok-thailand-august-12-2016-beautiful-luxury-bedroom-int.jpg",
+      "segment_name": "Historic",
+      "description": "Step into history at our iconic city hotel. Elegant architecture, luxurious rooms, and cultural experiences await you.",
+      "price": "$400",
+      "status": "booked",
+      "location": "Historic Downtown",
+      "facilities": ["Ballroom", "Spa", "Fine dining restaurant"]
+    },
+    {
+      "id": 5,
+      "estate_title": "Desert Oasis Resort",
+      "image": "https://i.ibb.co/pW2xPz5/spacious-room-with-wooden-table.jpg",
+      "segment_name": "Desert Retreat",
+      "description": "Discover serenity in the desert at our oasis resort. Enjoy camel rides, desert safaris, and starlit nights.",
+      "price": "$500",
+      "status": "booking now",
+      "location": "Sandy Dunes",
+      "facilities": ["Swimming pool", "Spa", "Poolside cabanas"]
+    },
+    {
+      "id": 6,
+      "estate_title": "Rural Farmstay Cottage",
+      "image": "https://i.ibb.co/r3xt4sY/548.jpg",
+      "segment_name": "Rural Retreat",
+      "description": "Experience farm life at our cozy cottage. Enjoy farm-to-table dining, outdoor activities, and scenic countryside views.",
+      "price": "$200",
+      "status": "booking now",
+      "location": "Idyllic Countryside",
+      "facilities": ["Farm animals", "Outdoor dining area", "Hiking trails"]
+    },
+    {
+      "id": 7,
+      "estate_title": "Ski Chalet Retreat",
+      "image": "https://i.ibb.co/qm9vgCq/12633.jpg",
+      "segment_name": "Winter Wonderland",
+      "description": "Embrace winter in our ski chalet retreat. Ski-in/ski-out access, hot tubs, and cozy fireplaces await you.",
+      "price": "$200",
+      "status": "booked",
+      "location": "Snowy Mountainside",
+      "facilities": ["Hot tub", "Ski equipment rental", "Apres-ski bar"]
+    },
+    {
+      "id": 8,
+      "estate_title": "Coastal Resort Retreat",
+      "image": "https://i.ibb.co/ZKn6X6B/10836.jpg",
+      "segment_name": "Coastal Retreat",
+      "description": "Escape to coastal luxury at our resort retreat. Private beaches, infinity pools, and oceanfront dining await you.",
+      "price": "$100",
+      "status": "booked",
+      "location": "Oceanfront Paradise",
+      "facilities": ["Infinity pool", "Private beach access", "Oceanfront dining"]
+    },
+    {
+      "id": 9,
+      "estate_title": "Lakeside Cabin Retreat",
+      "image": "https://i.ibb.co/tYDBcSt/39.jpg",
+      "segment_name": "Lake Retreat",
+      "description": "Relax by the lake at our charming cabin retreat. Fishing, boating, and lakeside relaxation await you.",
+      "price": "$50",
+      "status": "booking now",
+      "location": "Tranquil Lakeside",
+      "facilities": ["Boat dock", "Fishing equipment", "Lakeside terrace"]
+    }
+  ]
+  

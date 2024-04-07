@@ -1,7 +1,10 @@
+import Banner from "../Banner/Banner";
+import '../../App.css'
+
 const Home = () => {
     return (
         <div>
-            <h1>This Home</h1>
+            <Banner></Banner>
         </div>
     );
 };
