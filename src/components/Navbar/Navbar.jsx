@@ -6,10 +6,14 @@ const Navbar = () => {
   const navLinks = (
     <>
       <li>
-        <NavLink to='/'>Home</NavLink>
+        <NavLink to='/'  className={({ isActive, isPending }) =>
+            isPending ? "pending" : isActive ? "text-primary border border-primary font-semibold" : "font-semibold"
+          }>Home</NavLink>
       </li>
       <li>
-        <NavLink to='/update profile'>Update Profile</NavLink>
+        <NavLink to='/update profile' className={({ isActive, isPending }) =>
+            isPending ? "pending" : isActive ? "text-primary border border-primary font-semibold" : "font-semibold"
+          }>Update Profile</NavLink>
       </li>
      
     </>

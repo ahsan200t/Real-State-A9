@@ -18,26 +18,30 @@ const githubProvider = new GithubAuthProvider();
 export const AuthContext = createContext(null);
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
-  console.log(user);
+  const [loading, setLoading]=useState(true)
   // Create User
   const createUser = (email, password) => {
+    setLoading(true)
     return createUserWithEmailAndPassword(auth, email, password);
   };
 
   //   SignIn User
 
   const signInUser = (email, password) => {
+    setLoading(true)
     return signInWithEmailAndPassword(auth, email, password);
   };
 
   // observer
 
   useEffect(() => {
-    onAuthStateChanged(auth, (user) => {
+   const usSubscribe= onAuthStateChanged(auth, (user) => {
       if (user) {
         setUser(user);
+        setLoading(false)
       }
     });
+    return ()=> usSubscribe();
   }, []);
 
   
@@ -45,12 +49,14 @@ const AuthProvider = ({ children }) => {
   //   Google Login
 
   const googleLogIn = () => {
+    setLoading(true)
     return signInWithPopup(auth, googleProvider);
   };
 
   //   Github Login
 
   const githubLogIn = () => {
+    setLoading(true)
     return signInWithPopup(auth, githubProvider);
   };
 
@@ -66,7 +72,8 @@ const AuthProvider = ({ children }) => {
     googleLogIn,
     githubLogIn,
     logOut,
-    user
+    user,
+    loading
   };
   return (
     <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>
