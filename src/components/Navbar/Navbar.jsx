@@ -62,11 +62,11 @@ const Navbar = () => {
          <div className="dropdown dropdown-bottom flex items-center">
           <label tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
         <div className="w-10 rounded-full">
-       <img alt="" src="https://i.ibb.co/2ykmyLP/ahsan.jpg" />          
+       <img src={user?.photoURL || "https://i.ibb.co/2ykmyLP/ahsan.jpg"} />          
        </div>      
        </label> 
          <ul tabIndex={0} className="menu menu-sm dropdown-content  mt-1 z-[1] p-1 shadow-sm bg-base-100 rounded-box w-30">
-          <li className="btn btn-sm btn-ghost">Ahasan</li>
+          <li className="btn btn-sm btn-ghost">{user?.displayName || "name not found"}</li>
          
          </ul>
 
