@@ -9,6 +9,7 @@ import {
 import Root from './components/Root/Root';
 import Home from './components/Home/Home';
 import UpdateProfile from './components/UpdateProfile/UpdateProfile';
+import PropertyDetails from './components/PropertyDetails/PropertyDetails';
 
 const router = createBrowserRouter([
   {
@@ -17,11 +18,18 @@ const router = createBrowserRouter([
     children:[
       {
         path:'/',
-        element:<Home></Home>
+        element:<Home></Home>,
+        loader: ()=> fetch('/data.json')
+        
       },
       {
-        path:'update profile',
+        path:'/update profile',
         element:<UpdateProfile></UpdateProfile>
+      },
+      {
+        path:'/property-details/:id',
+        element:<PropertyDetails></PropertyDetails>,
+        loader: ()=> fetch('/data.json')
       }
     ]
   },
