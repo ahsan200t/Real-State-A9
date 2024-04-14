@@ -7,7 +7,7 @@ const PropertyDetails = () => {
   const detail = details.find((item) => item.id == id);
   return (
     <div>
-     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8 border rounded-3xl p-2">
+     <div className="grid grid-cols-1 p-3 lg:grid-cols-2 gap-8 mb-8 border rounded-3xl p-2">
 
         <div>
             <img className="rounded-3xl h-full" src={detail.image} alt="" />
