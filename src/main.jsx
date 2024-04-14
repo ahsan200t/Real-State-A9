@@ -14,6 +14,7 @@ import Login from './components/Login/Login';
 import Register from './components/Register/Register';
 import ErrorElement from './components/ErrorElement/ErrorElement';
 import AuthProvider from './AuthProvider/AuthProvider';
+import PrivetRout from './components/PrivetRout/PrivetRout';
 
 const router = createBrowserRouter([
   {
@@ -33,7 +34,10 @@ const router = createBrowserRouter([
       },
       {
         path:'/property-details/:id',
-        element:<PropertyDetails></PropertyDetails>,
+        element:
+        <PrivetRout>
+          <PropertyDetails></PropertyDetails>
+        </PrivetRout>,
         loader: ()=> fetch('/data.json')
       },
       {

@@ -1,6 +1,8 @@
 import { Link, NavLink } from "react-router-dom";
+import UseAuth from "../../Hooks/UseAuth";
 
 const Navbar = () => {
+  const {logOut, user}=UseAuth();
   const navLinks = (
     <>
       <li>
@@ -11,9 +13,11 @@ const Navbar = () => {
       </li>
      
     </>
+    
   );
   return (
-    <div className="navbar bg-base-100 mt-6 mb-10">
+     
+   <div className="navbar bg-base-100 mt-6 mb-10">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -46,18 +50,32 @@ const Navbar = () => {
          {navLinks}
         </ul>
       </div>
-      <div className="navbar-end">
-        <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+
+      <div className="navbar-end"> 
+      {
+      
+         user?  
+         <div className="dropdown dropdown-bottom flex items-center">
+          <label tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
         <div className="w-10 rounded-full">
-          <img alt="Tailwind CSS Navbar component" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />          
-        </div>
-       
-      </div>
-      <div>
-      <Link to='/login'><button className="btn btn-secondary">Login</button></Link>
-      </div>
-      </div>
-    </div>
+       <img alt="" src="https://i.ibb.co/2ykmyLP/ahsan.jpg" />          
+       </div>      
+       </label> 
+         <ul tabIndex={0} className="menu menu-sm dropdown-content  mt-1 z-[1] p-1 shadow-sm bg-base-100 rounded-box w-30">
+          <li className="btn btn-sm btn-ghost">Ahasan</li>
+         
+         </ul>
+
+            <button onClick={logOut} className="btn btn-sm btn-secondary">Logout</button>
+          
+         </div>
+          :
+          <Link to='/login'>
+         <button className="btn btn-sm btn-primary">Login</button>
+         </Link>
+      }           
+     </div>
+      </div>  
   );
 };
 
