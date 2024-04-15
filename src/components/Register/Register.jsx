@@ -3,6 +3,7 @@ import { Link, useNavigate, useLocation } from "react-router-dom";
 import UseAuth from "../../Hooks/UseAuth";
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import { useState } from "react";
+import { Helmet } from "react-helmet-async";
 
 
 const Register = () => {
@@ -29,6 +30,10 @@ const Register = () => {
       setRegisterError('Password should have at least one uppercase characters');
       return;
     }
+    if(!/[a-z]/.test(password)){
+      setRegisterError('Password should have at least one lowercase characters');
+      return;
+    }
 
     createUser(email, password)
     .then(() => {
@@ -44,6 +49,9 @@ const Register = () => {
   }
   return (
     <div>
+      <Helmet>
+        <title>Haven Vacation/Register</title>
+      </Helmet>
       <div className="hero min-h-screen bg-base-200 mb-8">
         <div className="hero-content flex-col">
           <div className="text-center">

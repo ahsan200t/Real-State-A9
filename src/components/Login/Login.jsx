@@ -3,6 +3,9 @@ import { Link, useNavigate, useLocation } from "react-router-dom";
 import SocialLogin from "./SocialLogin";
 import UseAuth from "../../Hooks/UseAuth";
 import { useState } from "react";
+import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
+import { Helmet } from "react-helmet-async";
 
 const Login = () => {
     const {signInUser}=UseAuth()
@@ -20,7 +23,7 @@ const Login = () => {
         const {email, password}=data;
         signInUser(email, password)
         .then((result) => {
-          setSuccess("Successfully Registered")
+          setSuccess("Successfully Login")
             if (result.user) {
               navigate(location?.state || '/')
             }
@@ -33,6 +36,9 @@ const Login = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>Haven Vacation/Login</title>
+      </Helmet>
       <div className="hero min-h-screen bg-base-200 mb-8">
         <div className="hero-content flex-col">
           <div className="text-center">
@@ -83,7 +89,9 @@ const Login = () => {
             <SocialLogin></SocialLogin>
             </div>
           </div>
+          <ToastContainer />
         </div>
+        
       </div>
 
 
