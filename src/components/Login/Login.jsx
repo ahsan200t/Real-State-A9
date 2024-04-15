@@ -2,11 +2,14 @@ import { useForm } from "react-hook-form";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import SocialLogin from "./SocialLogin";
 import UseAuth from "../../Hooks/UseAuth";
+import { useState } from "react";
 
 const Login = () => {
     const {signInUser}=UseAuth()
     const navigate = useNavigate();
   const location = useLocation();
+  const [loginError, setLoginError]=useState("")
+  const [success, setSuccess] = useState("");
    
     const {
         register,
@@ -17,10 +20,14 @@ const Login = () => {
         const {email, password}=data;
         signInUser(email, password)
         .then((result) => {
+          setSuccess("Successfully Registered")
             if (result.user) {
               navigate(location?.state || '/')
             }
-          });
+          })
+          .catch(()=>{
+            setLoginError("Password did not Match")
+          })
       }
 
 
@@ -29,7 +36,7 @@ const Login = () => {
       <div className="hero min-h-screen bg-base-200 mb-8">
         <div className="hero-content flex-col">
           <div className="text-center">
-            <h1 className="text-5xl font-bold">Create Your Account!</h1>
+            <h1 className="text-5xl font-bold">Login Your Account!</h1>
           </div>
           <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
             <form onSubmit={handleSubmit(onSubmit)} className="card-body">
@@ -66,6 +73,12 @@ const Login = () => {
                 <p>Don't Have An Account? <Link to='/register' className="link link-accent no-underline">Register</Link></p>
               </div>
             </form>
+            {loginError && (
+              <p className="text-red-600 text-center mb-2">{loginError}</p>
+            )}
+             {success && (
+              <p className="text-green-700 text-center mb-2">{success}</p>
+            )}
             <div className="mb-4">
             <SocialLogin></SocialLogin>
             </div>
