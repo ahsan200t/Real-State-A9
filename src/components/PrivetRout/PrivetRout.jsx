@@ -3,7 +3,7 @@ import { Navigate,useLocation } from "react-router-dom";
 import UseAuth from "../../Hooks/UseAuth";
 
 const PrivetRout = ({ children }) => {
-  const { user,loading } = UseAuth();
+  const { user, loading } = UseAuth();
   const location = useLocation();
   if(loading){
     return <h1 className="text-5xl text-center font-medium">Loading....</h1>

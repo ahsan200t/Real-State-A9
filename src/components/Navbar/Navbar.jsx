@@ -15,16 +15,26 @@ const Navbar = () => {
             isPending ? "pending" : isActive ? "text-primary border border-primary font-semibold" : "font-semibold"
           }>Update Profile</NavLink>
       </li>
+      <li>
+        <NavLink to='/feedback' className={({ isActive, isPending }) =>
+            isPending ? "pending" : isActive ? "text-primary border border-primary font-semibold" : "font-semibold"
+          }>FeedBack</NavLink>
+      </li>
+      <li>
+        <NavLink to='/about' className={({ isActive, isPending }) =>
+            isPending ? "pending" : isActive ? "text-primary border border-primary font-semibold" : "font-semibold"
+          }>About</NavLink>
+      </li>
      
     </>
     
   );
   return (
      
-   <div className="navbar bg-base-100 mt-6 mb-10">
+   <div className="navbar bg-base-100 mt-6 mb-10 shadow-xl">
       <div className="navbar-start">
-        <div className="dropdown">
-          <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+        <div className="dropdown dropdown-bottom z-10">
+          <div tabIndex={0} role="button" className="btn btn-ghost md:hidden lg:hidden">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5"
