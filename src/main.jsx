@@ -17,7 +17,6 @@ import AuthProvider from './AuthProvider/AuthProvider';
 import PrivetRout from './components/PrivetRout/PrivetRout';
 import { HelmetProvider } from 'react-helmet-async';
 import FeedBack from './components/FeedBack/FeedBack';
-import About from './components/About/About';
 
 const router = createBrowserRouter([
   {
@@ -55,10 +54,8 @@ const router = createBrowserRouter([
         path:'/feedback',
         element:<PrivetRout><FeedBack></FeedBack></PrivetRout>
       },
-      {
-        path:'/about',
-        element:<About></About>
-      }
+    
+    
     ]
   },
 ]);

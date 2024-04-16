@@ -4,13 +4,15 @@ import UseAuth from "../../Hooks/UseAuth";
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import { useState } from "react";
 import { Helmet } from "react-helmet-async";
+import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
+
 
 
 const Register = () => {
   const { createUser, updateUserProfile } = UseAuth();
   const [showPassword, setShowPassword]=useState(false);
   const [registerError, setRegisterError]=useState("")
-  const [success, setSuccess] = useState("");
 
   const navigate = useNavigate();
   const location = useLocation();
@@ -20,7 +22,7 @@ const Register = () => {
     formState: { errors },
   } = useForm()
   const onSubmit = (data) => {
-    const {email, password, image, fullName}=data;
+    const {email, password, photoURL, fullName}=data;
 
     if(password.length<6){
       setRegisterError('Password should be at least 6 characters or longer')
@@ -37,8 +39,8 @@ const Register = () => {
 
     createUser(email, password)
     .then(() => {
-      setSuccess("Successfully Registered")
-      updateUserProfile(fullName, image)
+      toast("Successfully Registered")
+      updateUserProfile(fullName, photoURL)
        .then(()=>{
         navigate(location?.state || '/')
        })      
@@ -47,6 +49,7 @@ const Register = () => {
       setRegisterError(error.message)
     })
   }
+
   return (
     <div>
       <Helmet>
@@ -125,12 +128,11 @@ const Register = () => {
             {registerError && (
               <p className="text-red-600 text-center mb-2">{registerError}</p>
             )}
-             {success && (
-              <p className="text-green-700 text-center mb-2">{success}</p>
-            )}
+            
           </div>
         </div>
       </div>
+      <ToastContainer></ToastContainer>
     </div>
   );
 };

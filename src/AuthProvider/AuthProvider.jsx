@@ -18,62 +18,59 @@ const githubProvider = new GithubAuthProvider();
 /* eslint-disable react/prop-types */
 export const AuthContext = createContext(null);
 const AuthProvider = ({ children }) => {
-  const [user, setUser] = useState(null);
-  const [loading, setLoading]=useState(true)
+  const [user, setUser] = useState(false);
+  const [loading, setLoading] = useState(true);
   // Create User
   const createUser = (email, password) => {
-    setLoading(true)
+    setLoading(true);
     return createUserWithEmailAndPassword(auth, email, password);
   };
 
-//   Update user profile
-  const updateUserProfile=(name, image)=>{
-   return updateProfile(auth.currentUser, {
-        displayName: name, 
-        photoURL: image,
-      });
-  }
-
+  //   Update user profile
+  const updateUserProfile = (fullName, photoURL) => {
+    return updateProfile(auth.currentUser, {
+      displayName: fullName,
+      photoURL: photoURL,
+    });
+  };
   //   SignIn User
 
   const signInUser = (email, password) => {
-    setLoading(true)
+    setLoading(true);
     return signInWithEmailAndPassword(auth, email, password);
   };
 
   // observer
 
   useEffect(() => {
-   const unSubscribe= onAuthStateChanged(auth, (user) => {
+    const unSubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
         setUser(user);
-        setLoading(false)
+        setLoading(false);
       }
     });
-    return ()=> unSubscribe();
+    return () => unSubscribe();
   }, []);
-
-  
 
   //   Google Login
 
   const googleLogIn = () => {
-    setLoading(true)
+    setLoading(true);
     return signInWithPopup(auth, googleProvider);
   };
 
   //   Github Login
 
   const githubLogIn = () => {
-    setLoading(true)
+    setLoading(true);
     return signInWithPopup(auth, githubProvider);
   };
 
   //   Logout
   const logOut = () => {
-    setUser(null)
-   return signOut(auth);
-   };
+    setUser(null);
+    return signOut(auth);
+  };
 
   const authInfo = {
     createUser,
@@ -83,7 +80,8 @@ const AuthProvider = ({ children }) => {
     logOut,
     user,
     loading,
-    updateUserProfile
+    updateUserProfile,
+    setUser,
   };
   return (
     <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>

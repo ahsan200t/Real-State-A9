@@ -21,9 +21,9 @@ const Navbar = () => {
           }>FeedBack</NavLink>
       </li>
       <li>
-        <NavLink to='/about' className={({ isActive, isPending }) =>
+        <NavLink to='/register' className={({ isActive, isPending }) =>
             isPending ? "pending" : isActive ? "text-primary border border-primary font-semibold" : "font-semibold"
-          }>About</NavLink>
+          }>Register</NavLink>
       </li>
      
     </>
@@ -80,7 +80,9 @@ const Navbar = () => {
          
          </ul>
 
-            <button onClick={logOut} className="btn btn-sm btn-secondary">Logout</button>
+           <Link to='/'> 
+           <button onClick={logOut} className="btn btn-sm btn-secondary">Logout</button>
+           </Link>
           
          </div>
           :
