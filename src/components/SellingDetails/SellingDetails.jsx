@@ -2,7 +2,7 @@ const SellingDetails = () => {
   return (
     <div className="text-center">
      <div className="mb-6">
-     <h1 className="text-5xl font-bold font-poppins text-secondary mb-2">OUR ACHIEVEMENTS</h1>
+     <h1 className="text-2xl md:text-5xl font-bold font-poppins text-secondary mb-2">OUR ACHIEVEMENTS</h1>
      <p className="w-1/2 mx-auto">Our dedication to quality has been recognized through numerous accolades, including multiple industry awards for excellence in hospitality and guest service.</p>
      </div>
       <div className="md:stats shadow">
