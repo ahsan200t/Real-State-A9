@@ -4,7 +4,7 @@ import UseAuth from "../../Hooks/UseAuth";
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 const UpdateProfile = () => {
-  const { updateUserProfile, user, setUser } = UseAuth();
+  const { updateUserProfile, user, setUser,setLoading } = UseAuth();
 
   const {
     register,
@@ -17,6 +17,7 @@ const UpdateProfile = () => {
       .then(()=>{
           toast('successfully Data Updated')
           setUser(true)
+          setLoading(true)
       })
       .catch(error=>{
           console.log(error.message)

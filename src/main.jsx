@@ -53,10 +53,7 @@ const router = createBrowserRouter([
       },
       {
         path:'/selling details',
-        element:
-        <PrivetRout>
-          <SellingDetails></SellingDetails>
-        </PrivetRout>
+        element:<PrivetRout><SellingDetails></SellingDetails></PrivetRout>  
       },
     
     

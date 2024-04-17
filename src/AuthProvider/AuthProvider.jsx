@@ -29,6 +29,7 @@ const AuthProvider = ({ children }) => {
   //   Update user profile
   
     const updateUserProfile = (fullName, photoURL,email) => {
+      setLoading(true)
       return updateProfile(auth.currentUser, {
         displayName: fullName,
         photoURL: photoURL,
@@ -48,14 +49,13 @@ const AuthProvider = ({ children }) => {
 
   useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth, (user) => {
+      setLoading(false)
       if (user) {
-        setUser(user);
-       
-        setLoading(false);
+        setUser(user);                
       }
     });
     return () => unSubscribe();
-  }, []);
+  }, [user]);
 
   //   Google Login
 
@@ -87,6 +87,7 @@ const AuthProvider = ({ children }) => {
     loading,
     updateUserProfile,
     setUser,
+    setLoading
   };
   return (
     <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>
