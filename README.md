@@ -4,19 +4,20 @@
 
 
 ## Features and Characteristics:
-1.Secure Booking Management System.
+### .Secure Booking Management System.
 
-2.Technology Integration.
+### .Technology Integration.
 
-3.Secure Payment Processing System.
+### .Secure Payment Processing System.
 
-4.Accessibility Features.
+### .Accessibility Features.
 
-5.Quality Assurance.
+ ### .Quality Assurance.
 
 ## npm packages:
-1. Animate.css,
 
-2.React Hook form,
+### 1.Animate.css,
 
-3.Swiper slider
+### 2.React Hook form,
+
+### 3.Swiper slider
