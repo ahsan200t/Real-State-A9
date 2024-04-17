@@ -8,11 +8,11 @@ import { ToastContainer, toast } from 'react-toastify';
 import { Helmet } from "react-helmet-async";
 
 const Login = () => {
-    const {signInUser}=UseAuth()
+    const {signInUser, updateUserProfile, setUser,user}=UseAuth()
     const navigate = useNavigate();
   const location = useLocation();
   const [loginError, setLoginError]=useState("")
-  const [success, setSuccess] = useState("");
+  
    
     const {
         register,
@@ -20,12 +20,14 @@ const Login = () => {
         formState: { errors },
       } = useForm()
       const onSubmit = (data) => {
-        const {email, password}=data;
+        const {email, password, fullName,photoURL}=data;
         signInUser(email, password)
         .then((result) => {
-          setSuccess("Successfully Login")
             if (result.user) {
-              navigate(location?.state || '/')
+              toast("Successfully Login")
+              updateUserProfile(fullName, photoURL,email)
+             navigate(location?.state || '/')
+             setUser(true)
             }
           })
           .catch(()=>{
@@ -33,7 +35,7 @@ const Login = () => {
           })
       }
 
-
+     console.log(user)
   return (
     <div>
       <Helmet>
@@ -82,9 +84,7 @@ const Login = () => {
             {loginError && (
               <p className="text-red-600 text-center mb-2">{loginError}</p>
             )}
-             {success && (
-              <p className="text-green-700 text-center mb-2">{success}</p>
-            )}
+             
             <div className="mb-4">
             <SocialLogin></SocialLogin>
             </div>

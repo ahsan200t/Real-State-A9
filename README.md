@@ -1,8 +1,16 @@
-# React + Vite
+# Haven Vacation
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Website: 
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features and Characteristics:
+1.Secure Booking Management System.
+2.Technology Integration.
+3.Secure Payment Processing System.
+4.Accessibility Features.
+5.Quality Assurance.
+
+## npm packages:
+1. Animate.css,
+2.React Hook form,
+3.Swiper slider

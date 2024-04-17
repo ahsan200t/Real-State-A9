@@ -12,16 +12,17 @@ const UpdateProfile = () => {
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
-    const { fullName, photoURL } = data;
-    updateUserProfile(fullName,photoURL)
-    .then(()=>{
-        toast('successfully Data Updated')
-        setUser(true)
-    })
-    .catch(error=>{
-        console.log(error.message)
-    })
-   
+    const { fullName, photoURL, email } = data; 
+      updateUserProfile(fullName,photoURL, email)
+      .then(()=>{
+          toast('successfully Data Updated')
+          setUser(true)
+      })
+      .catch(error=>{
+          console.log(error.message)
+        
+      })
+    
   };
   console.log(user)
   return (
@@ -33,7 +34,7 @@ const UpdateProfile = () => {
       <div className="hero min-h-screen bg-base-200 mb-8">
         <div className="hero-content flex-col">
           <div className="text-center">
-            <h1 className="text-5xl font-bold">Update Your Account!</h1>
+            <h1 className="text-5xl font-bold mb-4">Update Your Profile!</h1>
           </div>
           <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
             <form onSubmit={handleSubmit(onSubmit)} className="card-body">
@@ -50,6 +51,22 @@ const UpdateProfile = () => {
                   {...register("fullName", { required: true })}
                 />
                 {errors.fullName && (
+                  <span className="text-red-500">This field is required</span>
+                )}
+              </div>
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text">Email</span>
+                </label>
+                <input
+                  type="email"
+                  placeholder="Enter Your Email"
+                  className="input input-bordered"
+                  defaultValue={user?.email}
+                  name="email"
+                  {...register("email", { required: true })}
+                />
+                {errors.email && (
                   <span className="text-red-500">This field is required</span>
                 )}
               </div>

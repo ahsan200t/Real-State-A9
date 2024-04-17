@@ -20,7 +20,7 @@ const Services = ({item}) => {
           <p>{item.description}</p>
          <div>
          <div className="flex">
-         <p className="font-medium">Rent: </p>
+         <p className="font-medium">Status: </p>
          <h1 className="font-bold text-secondary">{item.status}</h1>
          </div>
         <div className="flex">

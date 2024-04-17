@@ -27,12 +27,15 @@ const AuthProvider = ({ children }) => {
   };
 
   //   Update user profile
-  const updateUserProfile = (fullName, photoURL) => {
-    return updateProfile(auth.currentUser, {
-      displayName: fullName,
-      photoURL: photoURL,
-    });
-  };
+  
+    const updateUserProfile = (fullName, photoURL,email) => {
+      return updateProfile(auth.currentUser, {
+        displayName: fullName,
+        photoURL: photoURL,
+        email: email
+      });
+    };
+  
   //   SignIn User
 
   const signInUser = (email, password) => {
@@ -45,7 +48,8 @@ const AuthProvider = ({ children }) => {
   useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
-        setUser(user);
+        setUser(user, true);
+       
         setLoading(false);
       }
     });

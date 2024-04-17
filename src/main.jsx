@@ -16,7 +16,7 @@ import ErrorElement from './components/ErrorElement/ErrorElement';
 import AuthProvider from './AuthProvider/AuthProvider';
 import PrivetRout from './components/PrivetRout/PrivetRout';
 import { HelmetProvider } from 'react-helmet-async';
-import FeedBack from './components/FeedBack/FeedBack';
+import SellingDetails from './components/SellingDetails/SellingDetails';
 
 const router = createBrowserRouter([
   {
@@ -30,9 +30,10 @@ const router = createBrowserRouter([
         loader: ()=> fetch('/data.json')
         
       },
-      {
-        path:'/update profile',
-        element:<UpdateProfile></UpdateProfile>
+      {    
+          path:'/update profile',
+          element:<UpdateProfile></UpdateProfile>
+         
       },
       {
         path:'/property-details/:id',
@@ -51,8 +52,11 @@ const router = createBrowserRouter([
         element:<Register></Register>
       },
       {
-        path:'/feedback',
-        element:<PrivetRout><FeedBack></FeedBack></PrivetRout>
+        path:'/selling details',
+        element:
+        <PrivetRout>
+          <SellingDetails></SellingDetails>
+        </PrivetRout>
       },
     
     

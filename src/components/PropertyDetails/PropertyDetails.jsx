@@ -18,7 +18,8 @@ const PropertyDetails = () => {
         </div>
         <div className="space-y-1]">
             <h1><span className="text-xl font-bold">{detail.estate_title}</span> <span className="bg-secondary text-white p-1 rounded-2xl">New</span></h1>
-            <p><span className="font-semibold">Location: </span>{detail.location}</p>
+            <p><span className="font-semibold">Location: </span>{detail.location}</p>            
+            <p className="font-semibold">Status: <span className="text-secondary text-xl">{detail.status}</span></p>
             <p><span className="font-semibold">Area: </span>{detail.area}</p>
             <p><span className="font-semibold">Price: </span>{detail.price}</p>
             <p className="font-bold mt-3 bg-gray-100 rounded-lg text-center">Our Facilities:</p>
