@@ -1,23 +1,26 @@
 # Haven Vacation
 
-## Website: 
+## Website Link: 
 
 
-## Features and Characteristics:
-### .Secure Booking Management System.
 
-### .Technology Integration.
 
-### .Secure Payment Processing System.
+## Features:
 
-### .Accessibility Features.
+.Secure Booking Management System.
 
- ### .Quality Assurance.
+.Technology Integration.
+
+.Secure Payment Processing System.
+
+.Accessibility Features.
+
+.Quality Assurance.
 
 ## npm packages:
 
-### 1.Animate.css,
+1.Animate.css,
 
-### 2.React Hook form,
+2.React Hook form,
 
-### 3.Swiper slider
+3.Swiper slider

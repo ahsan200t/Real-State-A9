@@ -72,7 +72,7 @@ const Register = () => {
                   type="text"
                   placeholder="Enter Your Name"
                   className="input input-bordered"
-                  name="name"
+                  name="fullName"
                   {...register("fullName", { required: true })}
                 />
                 {errors.fullName && <span className="text-red-500">This field is required</span>}
@@ -97,8 +97,8 @@ const Register = () => {
                   type="text"
                   placeholder="PhotoUrl"
                   className="input input-bordered"
-                  name="photo"
-                  {...register("photo url", { required: true })}
+                  name="photoURL"
+                  {...register("photoURL", { required: true })}
                 />
               </div>
               <div className="form-control relative">

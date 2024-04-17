@@ -33,6 +33,7 @@ const AuthProvider = ({ children }) => {
         displayName: fullName,
         photoURL: photoURL,
         email: email
+       
       });
     };
   
