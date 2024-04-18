@@ -57,7 +57,7 @@ const Register = () => {
       <Helmet>
         <title>Haven Vacation/Register</title>
       </Helmet>
-      <div className="hero min-h-screen bg-base-200 mb-8">
+      <div className="hero min-h-screen bg-base-200 rounded-3xl mb-8">
         <div className="hero-content flex-col">
           <div className="text-center">
             <h1 className="text-5xl font-bold">Create Your Account!</h1>

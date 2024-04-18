@@ -41,7 +41,7 @@ const Login = () => {
       <Helmet>
         <title>Haven Vacation/Login</title>
       </Helmet>
-      <div className="hero min-h-screen bg-base-200 mb-8">
+      <div className="hero min-h-screen bg-base-200 rounded-3xl mb-8">
         <div className="hero-content flex-col">
           <div className="text-center">
             <h1 className="text-5xl font-bold mb-6">Login Your Account!</h1>
